@@ -17,8 +17,8 @@ This package contains the updated demo files:
    - GitHub Pages:
      1. Commit these files to your `brainboost-demo` repo.
      2. Enable GitHub Pages (Settings → Pages → Branch: main / Folder: root).
-     3. Visit `https://<USERNAME>.github.io/brainboost-demo/` for main demo.
-     4. Visit `https://<USERNAME>.github.io/brainboost-demo/vr.html` for VR demo.
+     3. Visit `https://notcrater2.github.io/brainboost-demo/` for main demo.
+     4. Visit `[https://notcrater2.github.io/brainboost-demo/vr.html)` for VR demo.
 
    - Netlify Drop:
      1. Drag the entire folder to https://app.netlify.com/drop.
