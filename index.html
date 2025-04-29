@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BrainBoost Demo V0.69</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      background: #FFD1DC;
+      font-family: 'Baloo Paaji 2', cursive;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%; padding: 40px 0;
+      text-align: center;
+    }
+    header img {
+      height: 120px;
+    }
+    main {
+      width: 100%; max-width: 480px;
+      padding: 20px;
+      position: relative;
+    }
+    h1 {
+      font-size: 2rem; color: #333; text-align: center;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #FFF; border-radius: 12px;
+      padding: 20px; margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #game-card h2 {
+      color: #FF6F61; margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+    #game-card input {
+      width: 100%; padding: 10px; margin-bottom: 12px;
+      border: 2px solid #FFB88C; border-radius: 8px;
+      font-size: 1rem;
+    }
+    #game-card button {
+      width: 100%; padding: 12px;
+      background: #FF6F61; color: #fff; border:none;
+      border-radius: 8px; font-size: 1rem;
+      cursor: pointer; transition: background .2s;
+    }
+    #game-card button:hover { background: #E65A50; }
+    #game-card progress {
+      width:100%; height:12px; border-radius:6px; overflow:hidden;
+      margin-top: 12px;
+    }
+    .vr-btn {
+      display:block; margin: 0 auto;
+      padding: 14px 28px; background:#FFB88C; color:#fff;
+      border:none; border-radius:24px; font-size:1.1rem;
+      cursor:pointer; transition: background .2s;
+      text-align:center;
+    }
+    .vr-btn:hover { background:#E5977C; }
+    footer {
+      margin-top:auto; padding:20px; text-align:center;
+      font-size:0.9rem; color:#333;
+    }
+    .instagram {
+      position: absolute; bottom: 10px; left: 20px;
+      font-family: 'Baloo Paaji 2', cursive;
+      color: #333; font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="BrainBoost Logo">
+  </header>
+  <main>
+    <h1>BrainBoost Demo V0.69</h1>
+    <div id="game-card" class="card">
+      <h2 id="prompt">What percentage of children have learning differences?</h2>
+      <input id="answer" type="text" placeholder="Your answer here…">
+      <button id="next-btn">Next</button>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </div>
+    <button class="vr-btn" onclick="location.href='vr.html'">
+      🎮 Enter VR Experience
+    </button>
+    <div class="instagram">@BrainBoost_ar</div>
+  </main>
+  <footer>
+    Empowering kids with learning differences through fun AR challenges!
+  </footer>
+  <script>
+    (function(){
+      const prompts = [
+        "What percentage of children have learning differences?",
+        "What is 9 × 9?",
+        "What is 6 + 7?"
+      ];
+      let step = 0;
+      const promptEl = document.getElementById('prompt');
+      const btn = document.getElementById('next-btn');
+      const pb = document.getElementById('progress-bar');
+      btn.addEventListener('click', () => {
+        step++;
+        if (step < prompts.length) {
+          promptEl.textContent = prompts[step];
+          pb.value = Math.round((step / prompts.length) * 100);
+        } else {
+          document.getElementById('game-card').innerHTML =
+            '<h2>🎉 Well done!</h2><p>Demo complete.</p>';
+          pb.value = 100;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

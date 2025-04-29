@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>BrainBoost VR v0.6</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <style>
+    body{margin:0;overflow:hidden;}
+    .overlay{position:absolute;color:#FFF;text-shadow:0 0 6px rgba(0,0,0,0.7);
+      font-family:'Baloo Paaji 2',cursive;text-align:center;
+      left:50%;transform:translateX(-50%);width:80%;}
+    .overlay.top{top:30%;font-size:1.5rem;}
+    .overlay.mid{top:45%;font-size:1.3rem;}
+    .overlay.bot{bottom:30%;font-size:1rem;}
+    .vr-btn{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);
+      background:#FFB88C;color:#fff;padding:12px 24px;border:none;border-radius:24px;
+      font-family:'Baloo Paaji 2',cursive;font-size:1.1rem;cursor:pointer;
+      text-decoration:none; text-align:center;}
+    .vr-btn:hover{background:#E5977C;}
+  </style>
+</head>
+<body>
+  <a-scene>
+    <a-sky src="360.jpg" rotation="0 -130 0"></a-sky>
+  </a-scene>
+  <div class="overlay top">Helping kids with learning differences focus and succeed</div>
+  <div class="overlay mid">Experience immersive AR challenges</div>
+  <a href="index.html" class="vr-btn">← Back to Demo</a>
+</body>
+</html>
